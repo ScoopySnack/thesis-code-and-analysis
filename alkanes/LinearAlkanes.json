@@ -1,0 +1,133 @@
+{
+  "methane": {
+    "formula": "CH4",
+    "SMILES": "C",
+    "molecular_weight": 16.04,
+    "density": 0.656,
+    "boiling_point": -161.5,
+    "melting_point": -182.5,
+    "heat_of_vaporization": 8.2,
+    "solubility_in_water": 0.0002,
+    "flash_point": -188,
+    "autoignition_temperature": 537,
+    "heat_of_combustion": -890.4,
+    "heat_of_formation": -74.8,
+    "viscosity": "N/A",
+    "vapour_pressure": "N/A",
+    "graph_properties": {
+      "perron_frobenius": 1.00,
+      "fiedler_eigenvalue": 0.34,
+      "compression_ratio": 0.98,
+      "information_content": 0.0
+    }
+  },
+  "ethane": {
+    "formula": "C2H6",
+    "SMILES": "CC",
+    "molecular_weight": 30.07,
+    "density": 0.3390,
+    "boiling_point": -88.6,
+    "melting_point": -183.3,
+    "heat_of_vaporization": 11.9,
+    "solubility_in_water": 0.0017,
+    "flash_point": -88,
+    "autoignition_temperature": 515,
+    "heat_of_combustion": -1560.6,
+    "heat_of_formation": -84.7,
+    "viscosity": "N/A",
+    "vapour_pressure": "N/A",
+    "graph_properties": {
+      "perron_frobenius": 1.20,
+      "fiedler_eigenvalue": 0.45,
+      "compression_ratio": 0.95
+    }
+  },
+    "propane": {
+        "formula": "C3H8",
+        "SMILES": "CCC",
+        "molar_mass": 44.10,
+        "molecular_weight": 44.10,
+        "density": 0.493,
+        "boiling_point": -42.1,
+        "melting_point": -187.7,
+        "heat_of_vaporization": 15.9,
+        "solubility_in_water": 0.0002,
+        "flash_point": -104,
+        "autoignition_temperature": 450,
+        "heat_of_combustion": -2219.0,
+        "heat_of_formation": -103.8,
+        "viscosity": "N/A",
+        "vapour_pressure": "N/A",
+        "graph_properties": {
+        "perron_frobenius": 1.40,
+        "fiedler_eigenvalue": 0.56,
+        "compression_ratio": 0.92
+        }
+    },
+    "n-butane": {
+        "formula": "C4H10",
+        "SMILES": "CCCC",
+        "molar_mass": 58.12,
+        "molecular_weight": 58.12,
+        "density": 0.573,
+        "boiling_point": -0.5,
+        "melting_point": -138.3,
+        "heat_of_vaporization": 22.4,
+        "solubility_in_water": 0.0006,
+        "flash_point": -60,
+        "autoignition_temperature": 405,
+        "heat_of_combustion": -2877.0,
+        "heat_of_formation": -125.6,
+        "viscosity": "N/A",
+        "vapour_pressure": "N/A",
+        "graph_properties": {
+            "perron_frobenius": 1.60,
+            "fiedler_eigenvalue": 0.67,
+            "compression_ratio": 0.90
+        }
+    },
+    "n-pentane": {
+        "formula": "C5H12",
+        "SMILES": "CCCCC",
+        "molar_mass": 72.15,
+        "molecular_weight": 72.15,
+        "density": 0.626,
+        "boiling_point": 36.1,
+        "melting_point": -129.7,
+        "heat_of_vaporization": 29.2,
+        "solubility_in_water": 0.0002,
+        "flash_point": -49,
+        "autoignition_temperature": 260,
+        "heat_of_combustion": -3499.0,
+        "heat_of_formation": -158.0,
+        "viscosity": "N/A",
+        "vapour_pressure": "N/A",
+        "graph_properties": {
+            "perron_frobenius": 1.80,
+            "fiedler_eigenvalue": 0.78,
+            "compression_ratio": 0.88
+        }
+    },
+    "n-hexane": {
+        "formula": "C6H14",
+        "SMILES": "CCCCCC",
+        "molar_mass": 86.18,
+        "molecular_weight": 86.18,
+        "density": 0.655,
+        "boiling_point": 68.7,
+        "melting_point": -95.0,
+        "heat_of_vaporization": 35.1,
+        "solubility_in_water": 0.0003,
+        "flash_point": -22,
+        "autoignition_temperature": 225,
+        "heat_of_combustion": -4165.0,
+        "heat_of_formation": -197.8,
+        "viscosity": "N/A",
+        "vapour_pressure": "N/A",
+        "graph_properties": {
+            "perron_frobenius": 2.00,
+            "fiedler_eigenvalue": 0.89,
+            "compression_ratio": 0.85
+        }
+    }
+}
