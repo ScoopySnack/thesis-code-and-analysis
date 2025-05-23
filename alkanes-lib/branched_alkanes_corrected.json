@@ -1,0 +1,67 @@
+{
+  "branched_alkanes": {
+    "isobutane": {
+      "formula": "C4H10",
+      "SMILES": "CC(C)C",
+      "molecular_weight": 58.12,
+      "density": 0.5569,
+      "boiling_point": -11.7,
+      "melting_point": -159.6,
+      "heat_of_vaporization": 22.4,
+      "solubility_in_water": 0.0006,
+      "flash_point": -60,
+      "autoignition_temperature": 405,
+      "heat_of_combustion": -2878.5,
+      "heat_of_formation": -134.2,
+      "viscosity": "N/A",
+      "vapour_pressure": "N/A",
+      "graph_properties": {
+        "perron_frobenius": 1.4,
+        "fiedler_eigenvalue": 0.56,
+        "compression_ratio": 0.92
+      }
+    },
+    "2-methylbutane": {
+      "formula": "C5H12",
+      "SMILES": "CC(C)CC",
+      "molecular_weight": 72.15,
+      "density": 0.6019,
+      "boiling_point": 27.8,
+      "melting_point": -159.6,
+      "heat_of_vaporization": 28.4,
+      "solubility_in_water": 0.0005,
+      "flash_point": -50,
+      "autoignition_temperature": 410,
+      "heat_of_combustion": -3509.0,
+      "heat_of_formation": -147.0,
+      "viscosity": "N/A",
+      "vapour_pressure": "N/A",
+      "graph_properties": {
+        "perron_frobenius": 1.5,
+        "fiedler_eigenvalue": 0.65,
+        "compression_ratio": 0.9
+      }
+    },
+    "2,2-dimethylpropane": {
+      "formula": "C5H12",
+      "SMILES": "CC(C)(C)C",
+      "molecular_weight": 72.15,
+      "density": 0.6173,
+      "boiling_point": 9.5,
+      "melting_point": -159.6,
+      "heat_of_vaporization": 28.4,
+      "solubility_in_water": 0.0005,
+      "flash_point": -50,
+      "autoignition_temperature": 410,
+      "heat_of_combustion": -3504.3,
+      "heat_of_formation": -134.9,
+      "viscosity": "N/A",
+      "vapour_pressure": "N/A",
+      "graph_properties": {
+        "perron_frobenius": 1.5,
+        "fiedler_eigenvalue": 0.65,
+        "compression_ratio": 0.9
+      }
+    }
+  }
+}
