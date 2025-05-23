@@ -526,7 +526,7 @@
       }
     },
   "2,2,3-trimethylpentane": {
-        "formula": "C9H20",
+        "formula": "C8H18",
         "SMILES": "CC(C)(C)CC",
         "molecular_weight": 114.23,
         "density": 0.7160,
