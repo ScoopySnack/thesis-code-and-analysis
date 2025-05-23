@@ -524,6 +524,49 @@
         "fiedler_eigenvalue": 0.98,
         "compression_ratio": 0.82
       }
+    },
+  "2,2,3-trimethylpentane": {
+        "formula": "C9H20",
+        "SMILES": "CC(C)(C)CC",
+        "molecular_weight": 128.26,
+        "density": 0.7160,
+        "boiling_point": 100.0,
+        "melting_point": -159.6,
+        "heat_of_vaporization": 49.0,
+        "solubility_in_water": 0.0002,
+        "flash_point": -25,
+        "autoignition_temperature": 410,
+        "heat_of_combustion": -6160.0,
+        "heat_of_formation": -285.5,
+        "viscosity": "N/A",
+        "vapour_pressure": "N/A",
+        "graph_properties": {
+            "perron_frobenius": 1.90,
+            "fiedler_eigenvalue": 0.98,
+            "compression_ratio": 0.82
+        }
+
+  },
+    "2,2,4-trimethylpentane": {
+      "formula": "C9H20",
+      "SMILES": "CC(C)(C)CC",
+      "molecular_weight": 128.26,
+      "density": 0.6919,
+      "boiling_point": 100.0,
+      "melting_point": -159.6,
+      "heat_of_vaporization": 49.0,
+      "solubility_in_water": 0.0002,
+      "flash_point": -25,
+      "autoignition_temperature": 410,
+      "heat_of_combustion": -6160.0,
+      "heat_of_formation": -285.5,
+      "viscosity": "N/A",
+      "vapour_pressure": "N/A",
+      "graph_properties": {
+        "perron_frobenius": 1.90,
+        "fiedler_eigenvalue": 0.98,
+        "compression_ratio": 0.82
+      }
     }
   }
 }
