@@ -1,0 +1,50 @@
+{
+  "alkanes": {
+    "methane": {
+      "formula": "CH4",
+      "SMILES": "C",
+      "Density": 0.424,
+      "molecular weight": 16.04,
+      "refractive index": "",
+      "dielectric constant": 1.70,
+      "melting point": -183,
+      "boiling point": -164,
+      "vapour pressure": "",
+      "critical point" : {
+        "temperature_Tc": -82,
+        "pressure_Pc": 45.6,
+        "volume_Vc": 99.00
+      },
+      "surface tension": "",
+      "viscosity": "",
+      "Hildebrandt Solubility Parameter (δ)": "",
+      "specific heat capacity": "",
+      "dipole moment": 0.0,
+      "molar volume": 37.8,
+      "logP": 1.09
+    },
+    "ethane": {
+      "formula": "C2H6",
+      "SMILES": "CC",
+      "Density": 0.546,
+      "molecular weight": 30.07,
+      "refractive index": 1.212,
+      "dielectric constant": "",
+      "melting point": -182,
+      "boiling point": -89,
+      "vapour pressure": 3.850,
+      "critical point" : {
+        "temperature_Tc": 32.0,
+        "pressure_Pc": 39.6,
+        "volume_Vc": 148.00
+      },
+      "surface tension": "",
+      "viscosity": "",
+      "Hildebrandt Solubility Parameter (δ)": "",
+      "specific heat capacity": "",
+      "dipole moment": 0.0,
+      "molar volume": 55.1,
+      "logP": 1.81
+    }
+  }
+}
