@@ -1,4 +1,4 @@
-density-> g/cm^3 in 20 °C
+density-> g/cm^3  ==  g/ml   in 20 °C
 temp-> °C
 mass-> g/mol
 pressure-> atm
@@ -9,6 +9,8 @@ vapour_pressure-> Torr
 molar_mass-> g/mol
 molar_volume-> ml/mol
 
+Molecular refractive power-> mL/mol
+
 dipole_moment-> Debye(D)
 
 Kow-> logP // octanol-water partition coefficient, https://en.wikipedia.org/wiki/Octanol-water_partition_coefficient
@@ -18,3 +20,13 @@ Kow-> logP // octanol-water partition coefficient, https://en.wikipedia.org/wiki
 // logP is dimensionless, but it is often expressed in units of mL/g or mL/mol.
 // the numbers are usually between -3 and 6, with most compounds falling between -1 and 4. When close to 0,
 // the compound is equally hydrophilic and hydrophobic, meaning it has a balanced affinity for both water and octanol.
+
+refractive_index-> nD // refractive index at 20 °C
+
+surface_tension-> dyn/cm
+// dyn/cm is a unit of surface tension, which is the force per unit length acting on the surface of a liquid.
+
+Hildebrant solubility parameter <- (δ)
+
+viscosity-> cP
+specific_heat_capacity-> cal/mol·K
