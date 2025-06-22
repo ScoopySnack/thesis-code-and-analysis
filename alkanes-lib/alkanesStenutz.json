@@ -3,7 +3,7 @@
     "methane": {
       "number_ofC": 1,
       "molecular_weight": 16.04,
-      "Density": 0.424,
+      "density": 0.424,
       "molar_volume": 37.8,
       "refractive_index": "",
       "Molecular_refractive_power" : "",
@@ -26,7 +26,7 @@
     "ethane": {
       "number_ofC": 2,
       "molecular_weight": 30.07,
-      "Density": 0.546,
+      "density": 0.546,
       "molar_volume": 55.1,
       "refractive_index": 1.212,
       "Molecular_refractive_power" : 7.44,
@@ -57,9 +57,9 @@
       "dipole_moment": 0.08,
       "melting_point": -188,
       "boiling_point": -45,
-      "vapour_pressure": "",
-      "surface_tension": "",
-      "viscosity": "",
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
       "critical_point" : {
         "temperature_Tc": 97,
         "pressure_Pc": 42.0,
@@ -72,7 +72,7 @@
     "butane": {
       "number_ofC": 4,
       "molecular_weight": 58.12,
-      "Density": 0.579,
+      "density": 0.579,
       "molar_volume": 100.4,
       "refractive_index": 1.356,
       "Molecular_refractive_power" : 21.95,
@@ -509,7 +509,7 @@
     "octane": {
       "number_ofC": 8,
       "molecular_weight": 114.23,
-      "Density": 0.699,
+      "density": 0.699,
       "molar_volume": 163.4,
       "refractive_index": 1.395,
       "Molecular_refractive_power" : 39.18,

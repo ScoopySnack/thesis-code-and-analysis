@@ -1,47 +1,42 @@
 import json
-import csv
 
-with open("LinearAlkanes.json", "r") as f:
-    data = json.load(f)
+# Step 1 – Load original file
+with open("alkanesStenutz.json", "r") as file:
+    data = json.load(file)
 
-print(data)
+def normalize_key(key):
+    """Convert keys to lowercase and use underscores."""
+    return key.strip().lower().replace(" ", "_")
 
-def open_json_file(file_path):
-    with open(file_path, "r") as f:
-        data1 = json.load(f)
-    return data1
+def clean_and_normalize(obj):
+    """Recursive function to normalize keys and replace empty strings."""
+    if isinstance(obj, dict):
+        cleaned = {}
+        for key, value in obj.items():
+            new_key = normalize_key(key)
+            cleaned[new_key] = clean_and_normalize(value)
+        return cleaned
+    elif isinstance(obj, list):
+        return [clean_and_normalize(v) for v in obj]
+    elif obj == "":
+        return None
+    else:
+        return obj
 
-def json_to_dict(json_data):
-    return json.loads(json_data)
+# Step 2 – Clean and normalize everything
+cleaned_data = clean_and_normalize(data)
 
+# Step 3 – Add placeholder graph_properties to each alkane
+for alkane in cleaned_data.get("alkanes", {}):
+    cleaned_data["alkanes"][alkane]["graph_properties"] = {
+        "perron_frobenius": None,
+        "fiedler_eigenvalue": None,
+        "compression_ratio": None,
+        "information_content": None
+    }
 
-def json_to_csv(json_filename, csv_filename):
-    """Converts a JSON file to a CSV file."""
-    # Open and load the JSON file
-    with open(json_filename, 'r') as json_file:
-        data = json.load(json_file)
+# Step 4 – Save to new file
+with open("alkanes_cleaned.json", "w") as outfile:
+    json.dump(cleaned_data, outfile, indent=2)
 
-    # Open the CSV file for writing
-    with open(csv_filename, 'w', newline='') as csv_file:
-        if not data:
-            print("No data in the JSON file to write to CSV.")
-            return
-
-        # Create a CSV DictWriter object using the keys from the first item in the JSON list
-        writer = csv.DictWriter(csv_file, fieldnames=data[0].keys())
-
-        # Write the header (column names)
-        writer.writeheader()
-
-        # Write the rows (records)
-        writer.writerows(data)
-
-    print(f"Data has been written to {csv_filename}")
-
-
-# Example usage
-json_filename = "LinearAlkanes.json"
-csv_filename = "LinearAlkanes.csv"
-json_to_csv(json_filename, csv_filename)
-
-
+print("✅ Done! Saved as 'alkanes_cleaned.json'")
