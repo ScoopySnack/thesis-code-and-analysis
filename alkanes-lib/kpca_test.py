@@ -13,7 +13,7 @@ from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()  # Initialize the scaler
 targets_to_predict = scaler.fit_transform(targets_to_predict)  # Scale the features
 # Apply Kernel PCA
-kPca = KernelPCA(n_components=2, kernel='rbf', gamma=15)  # RBF kernel with gamma=15
+kPca = KernelPCA(n_components=2, kernel='rbf', gamma=0.1)  # RBF kernel with gamma=15
 X_kPca = kPca.fit_transform(targets_to_predict)  # Transform the data
 # Plot the results
 plt.figure(figsize=(8, 6))
