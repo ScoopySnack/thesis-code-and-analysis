@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 import pandas as pd
 
-df = pd.read_csv("alkanes_predicted.csv")
+df = pd.read_csv("alkanes_final.csv")
 
 # Drop non-numerical or irrelevant columns
 X = df.drop(columns=['density'], errors='ignore')
@@ -22,7 +22,7 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X_imputed)
 
 # Apply Kernel PCA
-kPca = KernelPCA(n_components=2, kernel='rbf', gamma=0.1)  # Adjust gamma if needed
+kPca = KernelPCA(n_components=2, kernel='rbf', gamma=0.001)  # Adjust gamma if needed
 X_kPca = kPca.fit_transform(X_scaled)
 
 # Plot
