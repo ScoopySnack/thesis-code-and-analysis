@@ -39,7 +39,7 @@ print(f"Calculated gamma value: {gamma_value:.4f}")
 
 
 # Apply Kernel PCA
-kPca = KernelPCA(n_components=2, kernel='rbf', gamma=0.0217)  # Adjust gamma if needed
+kPca = KernelPCA(n_components=2, kernel='rbf', gamma=gamma_value)  # Adjust gamma if needed
 X_kPca = kPca.fit_transform(X_scaled)
 
 # Plot
