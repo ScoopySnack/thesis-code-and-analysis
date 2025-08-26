@@ -552,6 +552,120 @@
       "δ": null,
       "specific_heat_capacity": null
     },
-    ""
+    "2,3-dimethylhexane": {
+      "number_ofC": 8,
+      "molecular_weight": 114.23,
+      "Density": 0.712,
+      "molar_volume": 160.3,
+      "refractive_index": 1.401,
+      "Molecular_refractive_power": 38.97,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": null,
+      "boiling_point": 116,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 293,
+        "pressure_Pc": 26.6,
+        "volume_Vc": 460.99
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "2,4-dimethylhexane": {
+      "number_ofC": 8,
+      "molecular_weight": 114.23,
+      "Density": 0.699,
+      "molar_volume": 163.4,
+      "refractive_index": 1.396,
+      "Molecular_refractive_power": 39.23,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": null,
+      "boiling_point": 109,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 282,
+        "pressure_Pc": 24.9,
+        "volume_Vc": 466.01
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "2,5-dimethylhexane": { 
+      "number_ofC": 8,
+      "molecular_weight": 114.23,
+      "Density": 0.694,
+      "molar_volume": 164.6,
+      "refractive_index": 1.393,
+      "Molecular_refractive_power": 39.25,
+      "dielectric_constant": null,
+      "dipole_moment": 0.0,
+      "melting_point": -91,
+      "boiling_point": 109,
+      "vapour_pressure": null,
+      "surface_tension": 19.57,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 279,
+        "pressure_Pc": 25.0,
+        "volume_Vc": 478.01
+      },
+      "logP": 4.12,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "3,3-dimethylhexane":{
+      "number_ofC": 8,
+      "molecular_weight": 114.23,
+      "Density": 0.709,
+      "molar_volume": 161.2,
+      "refractive_index": 1.399,
+      "Molecular_refractive_power": 39.02,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": -126,
+      "boiling_point": 112,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 278,
+        "pressure_Pc": 22.9,
+        "volume_Vc": 450.02
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "3,4-dimethylhexane": {
+      "number_ofC": 8,
+      "molecular_weight": 4.0,
+      "Density": 0.72,
+      "molar_volume": 158.7,
+      "refractive_index": null,
+      "Molecular_refractive_power": null,
+      "dielectric_constant": null,
+      "dipole_moment": 0.0,
+      "melting_point": null,
+      "boiling_point": null,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": null,
+        "pressure_Pc": null,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    }
   }
 }
