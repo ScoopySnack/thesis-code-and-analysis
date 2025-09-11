@@ -942,6 +942,144 @@
       "logP": 5.65,
       "δ": 7.6,
       "specific_heat_capacity": 71.0
+    },
+    "3,3-diethylpentane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": 0.753,
+      "molar_volume": 170.4,
+      "refractive_index": 1.421,
+      "Molecular_refractive_power": 43.18,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": -41,
+      "boiling_point": 139,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 324,
+        "pressure_Pc": 22.6,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "2,4-dimethyl-3-ethylpentane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": 0.738,
+      "molar_volume": 173.8,
+      "refractive_index": 1.414,
+      "Molecular_refractive_power": 43.41,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": -122,
+      "boiling_point": 137,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": null,
+        "pressure_Pc": null,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "2,2-dimethylheptane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": null,
+      "molar_volume": null,
+      "refractive_index": null,
+      "Molecular_refractive_power": null,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": -113,
+      "boiling_point": 133,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 295,
+        "pressure_Pc": 20.6,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "2,3-dimethylheptane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": 0.724,
+      "molar_volume": 177.3,
+      "refractive_index": 1.409,
+      "Molecular_refractive_power": 43.78,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": -116,
+      "boiling_point": 141,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 309,
+        "pressure_Pc": 21.9,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "2,4-dimethylheptane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": 0.716,
+      "molar_volume": 179.2,
+      "refractive_index": 1.402,
+      "Molecular_refractive_power": 43.66,
+      "dielectric_constant": 1.89,
+      "dipole_moment": null,
+      "melting_point": null,
+      "boiling_point": 134,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 298,
+        "pressure_Pc": 21.3,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "2,5-dimethylheptane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": 0.715,
+      "molar_volume": 179.5,
+      "refractive_index": 1.403,
+      "Molecular_refractive_power": 43.82,
+      "dielectric_constant": 1.89,
+      "dipole_moment": null,
+      "melting_point": null,
+      "boiling_point": 136,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 301,
+        "pressure_Pc": 21.2,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
     }
   }
 }
