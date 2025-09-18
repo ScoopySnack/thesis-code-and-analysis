@@ -1080,6 +1080,98 @@
       "logP": null,
       "δ": null,
       "specific_heat_capacity": null
+    },
+    "2,6-dimethylheptane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": 0.710,
+      "molar_volume": 180.7,
+      "refractive_index": 1.401,
+      "Molecular_refractive_power": 43.88,
+      "dielectric_constant": 1.99,
+      "dipole_moment": null,
+      "melting_point": -103,
+      "boiling_point": 135,
+      "vapour_pressure": null,
+      "surface_tension": 20.78,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 304,
+        "pressure_Pc": 20.8,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "3,3-dimethylheptane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": 0.730,
+      "molar_volume": 175.6,
+      "refractive_index": 1.410,
+      "Molecular_refractive_power": 43.46,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": null,
+      "boiling_point": 137,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 304,
+        "pressure_Pc": 21.1,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "3,4-dimethylheptane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": 0.731,
+      "molar_volume": 175.4,
+      "refractive_index": 1.411,
+      "Molecular_refractive_power": 43.55,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": null,
+      "boiling_point": 141,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 311,
+        "pressure_Pc": 22.3,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "3,5-dimethylheptane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": 0.723,
+      "molar_volume": 177.4,
+      "refractive_index": 1.407,
+      "Molecular_refractive_power": 43.64,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": null,
+      "boiling_point": 136,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 302,
+        "pressure_Pc": 21.5,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
     }
   }
 }
