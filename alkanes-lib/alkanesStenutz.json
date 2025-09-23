@@ -1264,6 +1264,52 @@
       "logP": null,
       "δ": null,
       "specific_heat_capacity": null
+    },
+    "3-ethylheptane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": 0.726,
+      "molar_volume": 176.7,
+      "refractive_index": 1.409,
+      "Molecular_refractive_power": 43.7,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": -115,
+      "boiling_point": 119,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 313,
+        "pressure_Pc": 22.2,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
+    },
+    "4-ethylheptane": {
+      "number_ofC": 9,
+      "molecular_weight": 128.26,
+      "Density": 0.741,
+      "molar_volume": 173.2,
+      "refractive_index": 1.416,
+      "Molecular_refractive_power": 43.42,
+      "dielectric_constant": null,
+      "dipole_moment": null,
+      "melting_point": null,
+      "boiling_point": 141,
+      "vapour_pressure": null,
+      "surface_tension": null,
+      "viscosity": null,
+      "critical_point": {
+        "temperature_Tc": 311,
+        "pressure_Pc": 22.4,
+        "volume_Vc": null
+      },
+      "logP": null,
+      "δ": null,
+      "specific_heat_capacity": null
     }
   }
 }
