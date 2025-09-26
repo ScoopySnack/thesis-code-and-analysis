@@ -2,7 +2,7 @@ import json
 import csv
 
 # Load the enriched JSON file
-with open("alkanes_final.json", "r") as file:
+with open("/workspaces/thesis-code-and-analysis/alkanes-lib/alkanes_top_features_0p9_1p0_1.json", "r") as file:
     data = json.load(file)
 
 # Extract all alkanes

@@ -3,7 +3,7 @@ import pandas as pd
 from collections import defaultdict
 
 # ---------- Load JSON ----------
-with open("/workspaces/thesis-code-and-analysis/alkanes-lib/alkanesStenutz.json", "r") as f:
+with open("/workspaces/thesis-code-and-analysis/alkanes-lib/alkanes_top_features_0p9_1p0_1.json", "r") as f:
     data = json.load(f)
 
 # Count alkanes
@@ -52,8 +52,9 @@ def feature_availability(data):
 
     df = pd.DataFrame.from_dict(stats, orient="index")
     df["available"] = df["total"] - df["missing"]
-    df["availability_rate"] = df["available"] / df["total"]
+    df["availability_rate"] = df["available"] / df["total"] 
     return df.sort_values(["availability_rate", "available"], ascending=[False, False])
+
 
 # ---------- Main ----------
 if __name__ == "__main__":

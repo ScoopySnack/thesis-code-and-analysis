@@ -1,0 +1,119 @@
+{
+    "alkanes": {
+        "pentane": {
+            "number_ofC": 5,
+            "molecular_weight": 72.15,
+            "Density": 0.626,
+            "molar_volume": 115.2,
+            "refractive_index": 1.358,
+            "Molecular_refractive_power": 25.27,
+            "dielectric_constant": 1.8,
+            "dipole_moment": 0.0,
+            "melting_point": -129,
+            "boiling_point": 36,
+            "vapour_pressure": 420,
+            "surface_tension": 15.48,
+            "viscosity": 0.23,
+            "critical_point": {
+                "temperature_Tc": 197.0,
+                "pressure_Pc": 32.7,
+                "volume_Vc": 304.0
+            },
+            "logP": 3.23,
+            "δ": 7.0,
+            "specific_heat_capacity": 40.3
+        },
+        "hexane": {
+            "number_ofC": 6,
+            "molecular_weight": 86.18,
+            "Density": 0.659,
+            "molar_volume": 130.7,
+            "refractive_index": 1.375,
+            "Molecular_refractive_power": 29.71,
+            "dielectric_constant": 1.9,
+            "dipole_moment": 0.08,
+            "melting_point": -97,
+            "boiling_point": 69,
+            "vapour_pressure": 124,
+            "surface_tension": 17.91,
+            "viscosity": 0.31,
+            "critical_point": {
+                "temperature_Tc": 234.0,
+                "pressure_Pc": 29.9,
+                "volume_Vc": 370.0
+            },
+            "logP": 3.8,
+            "δ": 6.9,
+            "specific_heat_capacity": 42.0
+        },
+        "heptane": {
+            "number_ofC": 7,
+            "molecular_weight": 100.2,
+            "Density": 0.684,
+            "molar_volume": 146.6,
+            "refractive_index": 1.388,
+            "Molecular_refractive_power": 34.55,
+            "dielectric_constant": 1.92,
+            "dipole_moment": 0.0,
+            "melting_point": -90,
+            "boiling_point": 98,
+            "vapour_pressure": 36,
+            "surface_tension": 20.3,
+            "viscosity": 0.42,
+            "critical_point": {
+                "temperature_Tc": 267.0,
+                "pressure_Pc": 27.0,
+                "volume_Vc": 432.0
+            },
+            "logP": 3.5,
+            "δ": 7.5,
+            "specific_heat_capacity": 52.0
+        },
+        "2,2,4-trimethylpentane": {
+            "number_ofC": 8,
+            "molecular_weight": 114.23,
+            "Density": 0.692,
+            "molar_volume": 165.1,
+            "refractive_index": 1.391,
+            "Molecular_refractive_power": 39.26,
+            "dielectric_constant": 1.94,
+            "dipole_moment": 0.0,
+            "melting_point": -107,
+            "boiling_point": 99,
+            "vapour_pressure": 41,
+            "surface_tension": 18.77,
+            "viscosity": 0.5,
+            "critical_point": {
+                "temperature_Tc": 271,
+                "pressure_Pc": 25.6,
+                "volume_Vc": 482.0
+            },
+            "logP": 4.08,
+            "δ": 7.4,
+            "specific_heat_capacity": 55.6
+        },
+        "nonane": {
+            "number_ofC": 9,
+            "molecular_weight": 128.26,
+            "Density": 0.714,
+            "molar_volume": 179.6,
+            "refractive_index": 1.403,
+            "Molecular_refractive_power": 43.84,
+            "dielectric_constant": 1.96,
+            "dipole_moment": 0.07,
+            "melting_point": -51,
+            "boiling_point": 151,
+            "vapour_pressure": 4,
+            "surface_tension": 22.9,
+            "viscosity": 0.67,
+            "critical_point": {
+                "temperature_Tc": 322,
+                "pressure_Pc": 22.8,
+                "volume_Vc": 555.0
+            },
+            "logP": 5.65,
+            "δ": 7.6,
+            "specific_heat_capacity": 71.0
+        }
+    }
+}
