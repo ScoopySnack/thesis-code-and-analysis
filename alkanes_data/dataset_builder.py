@@ -1,10 +1,21 @@
 import json
+import math
 import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import Descriptors
 from .smiles_generator import generate_linear_alkane_smiles
 from .graph_features import mol_to_graph, get_graph_features
 from .data_fetcher import fetch_properties
+
+
+def _sig(x, sig=3):
+    try:
+        xf = float(x)
+        if not math.isfinite(xf):
+            return None
+        return float(f"{xf:.{sig}g}")
+    except Exception:
+        return None
 
 def generate_alkane_dataset(min_c=1, max_c=20, save_csv=True, save_json=True):
     data = []
@@ -15,6 +26,11 @@ def generate_alkane_dataset(min_c=1, max_c=20, save_csv=True, save_json=True):
         formula = Chem.rdMolDescriptors.CalcMolFormula(mol)
         G = mol_to_graph(smiles)
         pf, fiedler, entropy, compression = get_graph_features(G)
+        # Round descriptors to 3 significant digits for output consistency
+        rpf = _sig(pf)
+        rfiedler = _sig(fiedler)
+        rentropy = _sig(entropy)
+        rcomp = _sig(compression)
         props = fetch_properties(smiles)
         row = {
             "name": name,
@@ -22,10 +38,10 @@ def generate_alkane_dataset(min_c=1, max_c=20, save_csv=True, save_json=True):
             "SMILES": smiles,
             **props,
             "graph_properties": {
-                "perron_frobenius": pf,
-                "fiedler_eigenvalue": fiedler,
-                "spectral_entropy": entropy,
-                "compression_ratio": compression
+                "perron_frobenius": rpf,
+                "fiedler_eigenvalue": rfiedler,
+                "spectral_entropy": rentropy,
+                "compression_ratio": rcomp
             }
         }
         data.append(row)

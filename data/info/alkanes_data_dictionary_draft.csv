@@ -1,0 +1,25 @@
+field,description,type,expected_units,notes,status
+name,Molecule common name or isomer name,string,,Exact casing as in JSON,
+number_ofC,Count of carbon atoms,integer,count,Derived from formula,
+molecular_weight,Molar mass,float,g/mol,,
+Density,Density (liquid unless noted),float,TBD (g/mL or g/cm³),Confirm temperature/reference,unit_tbd
+molar_volume,Molar volume,float,cm³/mol,Check temperature,
+refractive_index,Refractive index (nD),float,dimensionless,Usually at 20°C (nD20),temp_tbd
+Molecular_refractive_power,Molar refractivity,float,cm³/mol,,
+dielectric_constant,Relative permittivity,float,dimensionless,At specified frequency,freq_tbd
+dipole_moment,Dipole moment,float,Debye,,
+melting_point,Melting point,float,°C,,
+boiling_point,Boiling point,float,°C,Likely at 1 atm,pressure_tbd
+vapour_pressure,Vapor pressure (at 25°C if not otherwise stated),float,TBD (mmHg/kPa),Confirm reference T,unit_tbd
+surface_tension,Surface tension,float,mN/m,At given temperature,temp_tbd
+viscosity,Dynamic viscosity,float,mPa·s,At given temperature,temp_tbd
+Tc,Critical temperature,float,°C,Converted from dataset,
+Pc,Critical pressure,float,bar,Converted from dataset,
+Vc,Critical molar volume,float,cm³/mol,Converted from dataset,
+logP,Octanol/water partition coefficient (log10),float,dimensionless,,
+δ,Hildebrand solubility parameter,float,MPa^0.5,,
+specific_heat_capacity,Specific heat capacity (molar or mass-based),float,TBD (J/mol·K or J/g·K),Confirm basis,unit_tbd
+perron_frobenius,Largest eigenvalue of adjacency matrix,float,dimensionless,Graph-based descriptor,to_compute
+fiedler_eigenvalue,2nd smallest Laplacian eigenvalue,float,dimensionless,Graph-based descriptor,to_compute
+shannon_entropy_degree,Shannon entropy of degree distribution,float,bit,Graph-based descriptor,to_compute
+compression_ratio,Adjacency compression ratio,float,dimensionless,Graph-based descriptor,to_compute

@@ -1,1 +1,7 @@
-from .dataset_builder import generate_alkane_dataset
+# Lightweight package init to avoid heavy imports on simple consumers
+__all__ = [
+    "graph_features",
+    "dataset_builder",
+    "smiles_generator",
+    "data_fetcher",
+]

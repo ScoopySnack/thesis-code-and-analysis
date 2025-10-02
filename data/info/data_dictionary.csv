@@ -1,0 +1,20 @@
+feature,description,suggested_units,notes,coverage_rate,non_missing,missing
+Density,TBD,g/cm^3 (verify source),Methane value seems low vs liquids; verify if gas-phase or relative density.,0.9342105263157895,71,5
+Molecular_refractive_power,TBD,cm^3/mol (verify),,0.8552631578947368,65,11
+Pc,TBD,bar (verify),Some sources list Pc in bar or MPa; confirm source units.,0.9868421052631579,75,1
+Tc,TBD,°C (critical temperature),,0.9868421052631579,75,1
+Vc,TBD,cm^3/mol,,0.6052631578947368,46,30
+boiling_point,TBD,°C,,1.0,76,0
+dielectric_constant,TBD,unitless,,0.3815789473684211,29,47
+dipole_moment,TBD,Debye,,0.32894736842105265,25,51
+logP,TBD,unitless,,0.25,19,57
+melting_point,TBD,°C,,0.7763157894736842,59,17
+molar_volume,TBD,cm^3/mol (verify),Check if at 25 °C; values look plausible for liquids but verify reference temperature.,0.9210526315789473,70,6
+molecular_weight,TBD,g/mol,,1.0,76,0
+number_ofC,TBD,count (atoms),,1.0,76,0
+refractive_index,TBD,n20D (unitless),,0.8552631578947368,65,11
+specific_heat_capacity,TBD,J/(mol·K) or J/(g·K) (verify),Dataset inconsistent; confirm whether molar or specific (per gram).,0.06578947368421052,5,71
+surface_tension,TBD,mN/m,,0.13157894736842105,10,66
+vapour_pressure,TBD,kPa (verify),Units vary widely in literature; confirm kPa vs mmHg vs bar.,0.18421052631578946,14,62
+viscosity,TBD,mPa·s,,0.07894736842105263,6,70
+δ,TBD,MPa^0.5 (Hildebrand; verify),,0.09210526315789473,7,69
