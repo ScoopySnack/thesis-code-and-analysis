@@ -1,0 +1,26 @@
+{
+  "input_csv": "C:\\Users\\atzyn\\Documents\\MASTER\\THESIS\\thesis code\\data\\numeric_only_normalized.csv",
+  "output_csv": "C:\\Users\\atzyn\\Documents\\MASTER\\THESIS\\thesis code\\data\\numeric_only_normalized__kpca.csv",
+  "params_json": "C:\\Users\\atzyn\\Documents\\MASTER\\THESIS\\thesis code\\data\\numeric_only_normalized__scaler_params.json",
+  "feature_columns": [
+    "number_ofC",
+    "molecular_weight",
+    "Density",
+    "molar_volume",
+    "melting_point",
+    "boiling_point",
+    "Tc",
+    "Pc",
+    "Vc",
+    "logP",
+    "pf_eigenvalue",
+    "fiedler_eigenvalue",
+    "degree_entropy",
+    "compression_ratio"
+  ],
+  "n_components": 2,
+  "gamma": 2.1363731738218625,
+  "gamma_method": "provided",
+  "plot_path": "C:\\Users\\atzyn\\Documents\\MASTER\\THESIS\\thesis code\\data\\numeric_only_normalized__kpca__kpca_scatter.png",
+  "notes": "KPCA with RBF kernel applied to normalized data. Gamma computed via median pairwise distance unless provided. A 2D scatter plot of the first two components is saved if available."
+}

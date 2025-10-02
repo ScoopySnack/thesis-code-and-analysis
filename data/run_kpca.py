@@ -21,7 +21,7 @@ from sklearn.metrics import pairwise_distances
 def _default_paths(in_csv: Optional[str], out_csv: Optional[str]):
     # Resolve defaults relative to this script's directory to be robust to CWD
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    default_in = os.path.join(script_dir, "alkanes_core_with_smiles_final_with_graph_normalized.csv")
+    default_in = os.path.join(script_dir, "numeric_only_normalized.csv")
     if in_csv is None:
         in_csv = default_in
     if out_csv is None:
@@ -53,27 +53,17 @@ def _load_numeric_columns(params_path: str, df: pd.DataFrame) -> list[str]:
 
 
 def _median_heuristic_gamma(X: np.ndarray) -> float:
-    # Compute median pairwise distance; robust to outliers
-    # Use a sample if very large
-    n = X.shape[0]
-    if n == 0:
-        return 1.0
-    if n > 2000:
-        # Subsample rows to cap O(n^2) cost
-        rng = np.random.default_rng(42)
-        idx = rng.choice(n, size=2000, replace=False)
-        X_use = X[idx]
-    else:
-        X_use = X
-    D = pairwise_distances(X_use, metric="euclidean", n_jobs=None)
-    # Take upper triangle without diagonal
-    iu = np.triu_indices_from(D, k=1)
-    dists = D[iu]
-    # If all zeros (degenerate), fallback
-    med = float(np.median(dists)) if dists.size else 1.0
-    if not math.isfinite(med) or med <= 0.0:
-        return 1.0
-    return 1.0 / (2.0 * (med ** 2))
+    """
+        Υπολογίζει gamma για RBF kernel με median heuristic.
+        X: (n_samples, n_features)
+        """
+    # pairwise αποστάσεις
+    dists = pairwise_distances(X, metric="euclidean")
+    # παίρνουμε το άνω τρίγωνο χωρίς τη διαγώνιο
+    upper = dists[np.triu_indices_from(dists, k=1)]
+    median_dist = np.median(upper)
+    gamma = 1.0 / (2 * (median_dist ** 2))
+    return gamma
 
 
 def run_kpca(
@@ -99,13 +89,13 @@ def run_kpca(
     X = np.nan_to_num(X, nan=0.0, posinf=0.0, neginf=0.0)
 
     if gamma is None:
-        gamma_val = _median_heuristic_gamma(X)
-        print(f"Computed gamma via median heuristic: {gamma_val:.6g}")
+        gamma = _median_heuristic_gamma(X)
+        print(f"Computed gamma via median heuristic: {gamma:.6g}")
     else:
-        gamma_val = float(gamma)
-        print(f"Using provided gamma: {gamma_val:.6g}")
+        gamma = float(gamma)
+        print(f"Using provided gamma: {gamma:.6g}")
 
-    kpca = KernelPCA(n_components=n_components, kernel="rbf", gamma=gamma_val, fit_inverse_transform=False)
+    kpca = KernelPCA(n_components=n_components, kernel="rbf", gamma=gamma, fit_inverse_transform=False)
     X_kpca = kpca.fit_transform(X)
 
     # Append KPCA components
@@ -129,14 +119,14 @@ def run_kpca(
             x = out_df["kpca_1"].to_numpy()
             y = out_df["kpca_2"].to_numpy()
             # Color by number_ofC if available
-            if "number_ofC" in df.columns:
-                c = df["number_ofC"].to_numpy()
+            if "compression_ratio" in df.columns:
+                c = df["compression_ratio"].to_numpy()
                 sc = plt.scatter(x, y, c=c, cmap="viridis", s=40, edgecolors="k", linewidths=0.3)
                 cbar = plt.colorbar(sc)
-                cbar.set_label("number_ofC")
+                cbar.set_label("compression_ratio")
             else:
                 plt.scatter(x, y, color="tab:blue", s=40, edgecolors="k", linewidths=0.3)
-            plt.title(f"Kernel PCA (RBF) — gamma={gamma_val:.3g}")
+            plt.title(f"Kernel PCA (RBF) — gamma={gamma:.3g}")
             plt.xlabel("KPCA 1")
             plt.ylabel("KPCA 2")
             plt.grid(True, alpha=0.3)
@@ -160,7 +150,7 @@ def run_kpca(
         "params_json": params_json,
         "feature_columns": feat_cols,
         "n_components": n_components,
-        "gamma": gamma_val,
+        "gamma": gamma,
         "gamma_method": "provided" if gamma is not None else "median_heuristic",
         "plot_path": plot_path,
         "notes": "KPCA with RBF kernel applied to normalized data. Gamma computed via median pairwise distance unless provided. A 2D scatter plot of the first two components is saved if available.",
@@ -178,17 +168,17 @@ def main():
     ncomp_arg = int(sys.argv[3]) if len(sys.argv) > 3 and sys.argv[3] else 2
     gamma_arg = sys.argv[4] if len(sys.argv) > 4 else None
     if gamma_arg is not None and gamma_arg.lower() == "auto":
-        gamma_val = None
+        gamma = None
     elif gamma_arg is not None:
         try:
-            gamma_val = float(gamma_arg)
+            gamma = float(gamma_arg)
         except Exception:
             print(f"Invalid gamma '{gamma_arg}', falling back to auto.")
-            gamma_val = None
+            gamma = None
     else:
-        gamma_val = None
+        gamma = None
 
-    run_kpca(in_arg, out_arg, None, ncomp_arg, gamma_val)
+    run_kpca(in_arg, out_arg, None, ncomp_arg, gamma)
 
 
 if __name__ == "__main__":

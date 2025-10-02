@@ -10,14 +10,14 @@ import numpy as np
 # - Selects numeric columns automatically
 # - Imputes missing numeric values with the column median
 # - Standardizes each numeric column to zero mean and unit variance (population std)
-# - Writes a new CSV that PRESERVES original columns and adds normalized numeric columns with '__norm' suffix
+# - Writes a new CSV with normalized numeric columns preserved alongside non-numeric columns
 # - Saves a small JSON with the preprocessing parameters for reproducibility
 
 
 def _default_paths(in_csv: str | None, out_csv: str | None):
     # Resolve defaults relative to this script's directory to be robust to CWD
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    default_in = os.path.join(script_dir, "alkanes_core_with_smiles_final_with_graph.csv")
+    default_in = os.path.join(script_dir, "numeric_only.csv")
     if in_csv is None:
         in_csv = default_in
     if out_csv is None:
@@ -56,8 +56,6 @@ def normalize_for_kpca(in_csv: str | None = None, out_csv: str | None = None, pa
     # Work on a copy to avoid modifying original df until the end
     out_df = df.copy()
 
-    normalized_cols = []
-
     for col in num_cols:
         col_series = out_df[col]
         # Compute median ignoring non-finite values (coerce first)
@@ -77,10 +75,15 @@ def normalize_for_kpca(in_csv: str | None = None, out_csv: str | None = None, pa
         means[col] = mean_val
         stds[col] = std_val
 
-        # Standardize into a new column with suffix
-        norm_col = f"{col}__norm"
-        out_df[norm_col] = (col_imputed - mean_val) / std_val
-        normalized_cols.append(norm_col)
+        # Standardize
+        #out_df[col] = (col_imputed - mean_val) / std_val
+        for col in df.columns:
+            col_imputed = df[col].fillna(df[col].mean())  # ή ό,τι imputing κάνεις
+            out_df[col] = (col_imputed - df[col].min()) / (df[col].max() - df[col].min())
+    # Min-max scaling for reference
+
+
+
 
     # Save normalized CSV
     out_dir = os.path.dirname(out_csv)
@@ -94,11 +97,11 @@ def normalize_for_kpca(in_csv: str | None = None, out_csv: str | None = None, pa
     params = {
         "input_csv": in_csv,
         "output_csv": out_csv,
-        "numeric_columns": normalized_cols,
+        "numeric_columns": num_cols,
         "impute_median": medians,
         "standardize_mean": means,
         "standardize_std": stds,
-        "notes": "Original columns were preserved. Normalized counterparts were added with '__norm' suffix. Numeric columns were imputed with column median and standardized to zero mean and unit variance (population std).",
+        "notes": "Numeric columns were imputed with column median and standardized to zero mean and unit variance (population std). Non-numeric columns were left unchanged.",
     }
 
     with open(params_json, "w", encoding="utf-8") as f:
