@@ -1,7 +1,7 @@
 import os
 import sys
 import json
-import math
+#import math
 from typing import Optional
 
 import numpy as np
@@ -95,7 +95,7 @@ def run_kpca(
         gamma = float(gamma)
         print(f"Using provided gamma: {gamma:.6g}")
 
-    kpca = KernelPCA(n_components=n_components, kernel="rbf", gamma=gamma, fit_inverse_transform=False)
+    kpca = KernelPCA(n_components=n_components, kernel="rbf", gamma=0.1, fit_inverse_transform=False)
     X_kpca = kpca.fit_transform(X)
 
     # Append KPCA components
@@ -119,14 +119,14 @@ def run_kpca(
             x = out_df["kpca_1"].to_numpy()
             y = out_df["kpca_2"].to_numpy()
             # Color by number_ofC if available
-            if "compression_ratio" in df.columns:
-                c = df["compression_ratio"].to_numpy()
+            if "degree_entropy" in df.columns:
+                c = df["degree_entropy"].to_numpy()
                 sc = plt.scatter(x, y, c=c, cmap="viridis", s=40, edgecolors="k", linewidths=0.3)
                 cbar = plt.colorbar(sc)
-                cbar.set_label("compression_ratio")
+                cbar.set_label("degree_entropy")
             else:
                 plt.scatter(x, y, color="tab:blue", s=40, edgecolors="k", linewidths=0.3)
-            plt.title(f"Kernel PCA (RBF) — gamma={gamma:.3g}")
+            plt.title(f"Kernel PCA (RBF) ")
             plt.xlabel("KPCA 1")
             plt.ylabel("KPCA 2")
             plt.grid(True, alpha=0.3)
