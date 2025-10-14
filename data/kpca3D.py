@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-df = pd.read_csv("../archive/numeric_only_normalized.csv")
+df = pd.read_csv("numeric_only_normalized.csv")
 
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(df)
