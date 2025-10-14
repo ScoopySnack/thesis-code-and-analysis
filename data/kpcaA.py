@@ -62,11 +62,60 @@ rho, _ = spearmanr(D_X.ravel(), D_Z.ravel())
 print(f"Distance monotonicity (Spearman) ≈ {rho:.3f}")
 
 
-gap, d_est, eigvals = spectral_gap_for_gamma(X_scaled, g_star)
+gap, d_est, eigvals1 = spectral_gap_for_gamma(X_scaled, g_star)
 plt.figure(figsize=(6,4))
-plt.plot(eigvals, marker='o')
+plt.plot(eigvals1, marker='o')
 plt.yscale('log'); plt.xlabel('Index'); plt.ylabel('Eigenvalue (log)')
 plt.title(f'Kernel eigen-spectrum (gamma={g_star:.3g})')
 plt.tight_layout(); plt.show()
 print(f"Estimated intrinsic dimension (gap index): {d_est}")
 
+
+def spectral_gaps_plot(X_scaled, gamma, top_k=None, logy=False, title=None):
+    """
+    Υπολογίζει και κάνει plot τα |λ_{i+1} - λ_i| για τον centered Gram matrix του RBF kernel.
+    - X_scaled: (N, D) scaled features
+    - gamma: RBF parameter
+    - top_k: αν θες να κρατήσεις μόνο τις top_k ιδιοτιμές
+    - logy: αν True, κάνει log-scale στον άξονα y για ευκρίνεια
+    """
+    # 1) Gram + centering
+    K = rbf_kernel(X_scaled, X_scaled, gamma=gamma)
+    Kc = KernelCenterer().fit_transform(K)
+
+    # 2) Eigenvalues (συμμετρικός πίνακας) σε φθίνουσα σειρά
+    eigvals = np.linalg.eigvalsh(Kc)[::-1]
+    if top_k is not None:
+        eigvals = eigvals[:top_k]
+
+    # 3) Διαφορά διαδοχικών ιδιοτιμών (απόλυτη τιμή)
+    diffs = np.abs(np.diff(eigvals))
+    idx = np.argmax(diffs)  # θέση μέγιστου gap
+    max_gap = diffs[idx]
+    intrinsic_d = idx + 1    # εκτίμηση intrinsic dimension
+
+    # 4) Plot
+    fig, ax = plt.subplots(figsize=(7,4))
+    ax.plot(np.arange(1, len(diffs)+1), diffs, marker='o', linewidth=1)
+    ax.axvline(intrinsic_d, ls='--', color='red', label=f"max gap @ i={intrinsic_d}")
+    ax.set_xlabel("i (μεταξύ λ_i και λ_{i+1})")
+    ax.set_ylabel("|λ_{i+1} - λ_i|")
+    if logy:
+        ax.set_yscale('log')
+    if title is None:
+        title = f"Spectral gaps for RBF γ={gamma:g}"
+    ax.set_title(title)
+    ax.legend()
+    plt.tight_layout()
+    plt.show()
+
+    return {
+        "eigvals": eigvals,
+        "diffs": diffs,
+        "max_gap": float(max_gap),
+        "gap_index_i": int(intrinsic_d)  # d ≈ intrinsic dimension
+    }
+
+# Παράδειγμα χρήσης:
+res = spectral_gaps_plot(X_scaled, gamma=g_star, top_k=80, logy=True)
+print(res)

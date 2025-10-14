@@ -10,7 +10,7 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(df)
 
 # --- Εφαρμογή Kernel PCA ---
-kpca = KernelPCA(n_components=3, kernel='rbf', gamma=2.13)
+kpca = KernelPCA(n_components=3, kernel='rbf', gamma=0.0452)
 X_kpca = kpca.fit_transform(X_scaled)
 
 # --- 3D Plot ---
@@ -18,12 +18,12 @@ fig = plt.figure(figsize=(10, 7))
 ax = fig.add_subplot(111, projection='3d')
 
 # Αν έχεις κάποια στήλη π.χ. "number_ofC" για χρωματισμό:
-if "degree_entropy" in df.columns:
-    colors = df["degree_entropy"]
+if "boiling_point" in df.columns:
+    colors = df["boiling_point"]
     sc = ax.scatter(X_kpca[:,0], X_kpca[:,1], X_kpca[:,2],
                     c=colors, cmap='viridis', s=60, edgecolors='k')
     cbar = plt.colorbar(sc)
-    cbar.set_label("Entropy")
+    cbar.set_label("boiling_point")
 else:
     ax.scatter(X_kpca[:,0], X_kpca[:,1], X_kpca[:,2],
                color='tab:blue', s=60, edgecolors='k')
