@@ -22,7 +22,7 @@ _DATA_CANDIDATES = [
     _BASE_DIR / "alkanes_core_with_smiles_final.csv",
     _BASE_DIR.parent / "data" / "alkanes_core_with_smiles_final.csv",
     Path("data") / "alkanes_core_with_smiles_final.csv",
-    Path("alkanes_core_with_smiles_final.csv"),
+    Path("../../archive/alkanes_core_with_smiles_final.csv"),
 ]
 for _p in _DATA_CANDIDATES:
     if _p.exists():

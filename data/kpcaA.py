@@ -10,7 +10,7 @@ from scipy.spatial.distance import pdist, squareform
 from scipy.stats import spearmanr
 
 
-df = pd.read_csv("numeric_only_normalized.csv")
+df = pd.read_csv("../archive/numeric_only_normalized.csv")
 
 # π.χ. target
 y = df["Tc"].values
